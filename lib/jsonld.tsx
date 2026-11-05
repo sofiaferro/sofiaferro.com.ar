@@ -1,5 +1,5 @@
 import type { Locale } from "@/lib/content/schema";
-import { getResume, getSite, type Post, type Project } from "@/lib/content";
+import { getResume, getSite, type Project } from "@/lib/content";
 
 type JsonLd = Record<string, unknown>;
 
@@ -54,23 +54,6 @@ export function projectJsonLd(project: Project, locale: Locale): JsonLd {
     ...(project.meta.images[0]
       ? { image: `${site.domain}${project.meta.images[0].src}` }
       : {}),
-    author: { "@id": site.personId },
-  };
-}
-
-export function postJsonLd(post: Post, locale: Locale): JsonLd {
-  const site = getSite();
-  const url = `${site.domain}/${locale}/blog/${post.meta.slug}`;
-  return {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": `${url}#post`,
-    headline: post.doc.title,
-    description: post.doc.summary,
-    url,
-    datePublished: post.meta.date,
-    inLanguage: locale,
-    ...(post.meta.image ? { image: `${site.domain}${post.meta.image}` } : {}),
     author: { "@id": site.personId },
   };
 }

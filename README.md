@@ -26,7 +26,7 @@ next-intl (es/en) · contenido en MDX bilingüe bajo `content/` · pnpm · Verce
 
 ## Contenido
 
-Una entrada = un directorio: `content/{projects,posts}/<slug>/{meta.yaml, es.mdx, en.mdx}`.
+Una entrada = un directorio: `content/projects/<slug>/{meta.yaml, es.mdx, en.mdx}`.
 `meta.yaml` guarda los hechos independientes del idioma; cada `*.mdx` solo lo
 traducible (title, summary) + cuerpo CommonMark. `lib/content` (schemas zod)
 es la única fuente de verdad para páginas, endpoints markdown, JSON-LD,

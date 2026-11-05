@@ -44,16 +44,6 @@ export const ProjectMetaSchema = z.object({
 });
 export type ProjectMeta = z.infer<typeof ProjectMetaSchema>;
 
-export const PostMetaSchema = z.object({
-  slug: z.string().regex(/^[a-z0-9-]+$/),
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  image: z.string().optional(),
-  // Supabase UUID preserved for the redirect map from old /blog/<uuid> URLs.
-  legacyId: z.string().optional(),
-  status: z.enum(["published", "archived"]).default("published"),
-});
-export type PostMeta = z.infer<typeof PostMetaSchema>;
-
 // Frontmatter of each per-locale MDX file: only translatable fields live here.
 export const LocalizedDocSchema = z.object({
   title: z.string(),

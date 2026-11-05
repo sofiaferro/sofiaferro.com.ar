@@ -1,6 +1,6 @@
 /**
  * Content parity check, run as `pnpm check:content`.
- * Fails if any project/post lacks a locale, has invalid meta/frontmatter,
+ * Fails if any project lacks a locale, has invalid meta/frontmatter,
  * or references an image that doesn't exist under public/.
  */
 import fs from "node:fs";
@@ -10,7 +10,6 @@ import { load as loadYaml } from "js-yaml";
 import {
   LOCALES,
   LocalizedDocSchema,
-  PostMetaSchema,
   ProjectMetaSchema,
 } from "../lib/content/schema";
 
@@ -18,8 +17,8 @@ const ROOT = process.cwd();
 const errors: string[] = [];
 
 function checkCollection(
-  collection: "projects" | "posts",
-  metaSchema: typeof ProjectMetaSchema | typeof PostMetaSchema,
+  collection: "projects",
+  metaSchema: typeof ProjectMetaSchema,
 ) {
   const base = path.join(ROOT, "content", collection);
   if (!fs.existsSync(base)) {
@@ -45,7 +44,7 @@ function checkCollection(
     });
     if (!parsed.success) {
       errors.push(`${rel}/meta.yaml: ${parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; ")}`);
-    } else if ("images" in parsed.data) {
+    } else {
       for (const img of parsed.data.images) {
         if (
           img.src.startsWith("/") &&
@@ -76,11 +75,10 @@ function checkCollection(
 }
 
 const nProjects = checkCollection("projects", ProjectMetaSchema);
-const nPosts = checkCollection("posts", PostMetaSchema);
 
 if (errors.length) {
   console.error(`✗ content check failed (${errors.length} errors):`);
   for (const e of errors) console.error(`  - ${e}`);
   process.exit(1);
 }
-console.log(`✓ content ok: ${nProjects} projects, ${nPosts} posts, both locales`);
+console.log(`✓ content ok: ${nProjects} projects, both locales`);

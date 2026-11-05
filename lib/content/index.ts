@@ -6,11 +6,9 @@ import { load as loadYaml } from "js-yaml";
 import {
   type Locale,
   type ProjectMeta,
-  type PostMeta,
   type LocalizedDoc,
   type Site,
   ProjectMetaSchema,
-  PostMetaSchema,
   LocalizedDocSchema,
   SiteSchema,
 } from "./schema";
@@ -25,7 +23,6 @@ export type Entry<M> = {
 };
 
 export type Project = Entry<ProjectMeta>;
-export type Post = Entry<PostMeta>;
 
 function readYaml<T>(file: string, parse: (data: unknown) => T): T {
   const data = loadYaml(fs.readFileSync(file, "utf8"));
@@ -40,7 +37,7 @@ function readLocalizedMdx(dir: string, locale: Locale) {
 }
 
 function loadCollection<M extends { slug: string; status: string; date: string }>(
-  collection: "projects" | "posts",
+  collection: "projects",
   locale: Locale,
   parseMeta: (data: unknown) => M,
 ): Entry<M>[] {
@@ -68,15 +65,6 @@ export const getProjects = cache((locale: Locale): Project[] =>
 export const getProject = cache(
   (slug: string, locale: Locale): Project | undefined =>
     getProjects(locale).find((p) => p.meta.slug === slug),
-);
-
-export const getPosts = cache((locale: Locale): Post[] =>
-  loadCollection("posts", locale, (d) => PostMetaSchema.parse(d)),
-);
-
-export const getPost = cache(
-  (slug: string, locale: Locale): Post | undefined =>
-    getPosts(locale).find((p) => p.meta.slug === slug),
 );
 
 export const getPage = cache(
