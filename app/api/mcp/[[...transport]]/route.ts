@@ -128,8 +128,8 @@ const handler = createMcpHandler(
       {
         title: "Get manifesto",
         description:
-          "Sofia Ferro's manifesto on programming as embodied practice — error as path, faith in " +
-          "the infinite loop of trying once more. Returns title, summary and the full markdown text. " +
+          "Sofia Ferro's manifesto on programming as embodied practice — error as path, the practice " +
+          "that stays when everything else changes. Returns title, summary and the full markdown text. " +
           "For her ongoing thinking, see X: https://x.com/svfonx",
         inputSchema: z.object({ locale: LocaleInput }),
       },
