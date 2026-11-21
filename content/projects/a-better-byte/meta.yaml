@@ -1,0 +1,14 @@
+date: '2026'
+category: literatura-expandida
+tech:
+  - three.js
+  - Blender
+  - Web Audio
+links:
+  live: https://a-better-byte.vercel.app/
+images:
+  - src: /images/a-better-byte.jpg
+    alt:
+      es: Una Macintosh de 1990 sobre un escritorio de madera desordenado, de noche, iluminada por una lámpara naranja, junto a una impresora láser, una radio y una botella de vino tinto
+      en: A 1990 Macintosh on a messy wooden desk at night, lit by an orange desk lamp, next to a laser printer, a radio and a bottle of red wine
+status: published
