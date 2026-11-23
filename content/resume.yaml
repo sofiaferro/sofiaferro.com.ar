@@ -37,6 +37,14 @@ projects:
     description: A 1984 TOMY Omnibot that talks again — it listens, sees, converses and moves, with a language model inside. Built at Paisanos.
     url: https://www.sofiaferro.com.ar/en/projects/gaucho
     keywords: [hardware, robotics, LLM]
+  - name: linkmi
+    description: A free link-in-bio page with hand-written WebGL shader backgrounds and no accounts. Open source.
+    url: https://www.sofiaferro.com.ar/en/projects/linkmi
+    keywords: [creative coding, WebGL, Next.js]
+  - name: a better byte
+    description: A homage to Charles Bukowski's Macintosh IIsi — his room at night in three.js, where his poems about the computer open, print and get lost like on the Mac.
+    url: https://www.sofiaferro.com.ar/en/projects/a-better-byte
+    keywords: [expanded literature, three.js]
   - name: pit0nisa
     description: An anthology that explores the mediumistic nature of computational language, generated with Markov chains.
     url: https://www.sofiaferro.com.ar/en/projects/pit0nisa
@@ -73,4 +81,4 @@ projects:
 meta:
   canonical: https://www.sofiaferro.com.ar/api/resume.json
   version: v1.0.0
-  lastModified: "2026-09-15"
+  lastModified: "2026-11-23"
