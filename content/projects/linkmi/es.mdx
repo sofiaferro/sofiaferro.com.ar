@@ -1,0 +1,13 @@
+---
+title: linkmi
+descriptor: páginas de links con shaders WebGL
+summary: Una página de links gratis, con fondos de shaders escritos a mano y sin cuentas.
+---
+
+[linkmi](https://linkmi.ar/) es una página de links: elegís un nombre, armás la página y la publicás en `linkmi.ar/tunombre`. Es gratis y no pide cuenta ni contraseña. Al publicar, te da un link secreto de edición que se muestra una sola vez; en el servidor queda solo su hash. Si ya tenés un Linktree, se importa con un clic. La mía está en [linkmi.ar/sofiferro](https://linkmi.ar/sofiferro).
+
+Lo que la distingue es el fondo: nueve shaders de WebGL escritos a mano, sin librerías 3D (micelio, aurora, cromo líquido, gradiente, halftone, topografía, dither, cáusticas e iridiscente), con colores y velocidad a elección. Responden al mouse y, en el celular, a cómo se inclina el teléfono. Hay cuatro combinaciones tipográficas, cuatro estilos de botón y esquinas ajustables, y cada página genera su propia imagen para compartir.
+
+También se puede usar sin base de datos. "link sin cuenta" guarda la página entera adentro de la URL, y quien prefiera su propio deploy puede hacer fork, diseñarla en el editor y descargar el `linkmi.config.json`. Está hecha en Next.js 16 sobre Vercel, con Upstash Redis para las páginas publicadas y Vercel Blob para los avatares. El código es abierto, con licencia MIT.
+
+Al principio se llamaba linkmicelio, por el primer shader: una red que crece por abajo y conecta cosas que están lejos, que es más o menos lo que hace una página de links.

@@ -1,0 +1,16 @@
+date: '2026'
+category: creative-coding
+tech:
+  - Next.js
+  - WebGL
+  - Upstash Redis
+  - Vercel Blob
+links:
+  live: https://linkmi.ar/
+  github: https://github.com/sofiaferro/linkmi
+images:
+  - src: /images/linkmi.jpg
+    alt:
+      es: La portada de linkmi, con el título "tus links, vivos." sobre un shader de filamentos verde lima que forman una red, como un micelio
+      en: The linkmi landing page, with the headline "tus links, vivos." over a shader of lime green filaments that form a network, like mycelium
+status: published

@@ -1,0 +1,13 @@
+---
+title: linkmi
+descriptor: link-in-bio pages with WebGL shaders
+summary: A free link-in-bio page with hand-written shader backgrounds and no accounts.
+---
+
+[linkmi](https://linkmi.ar/) is a link-in-bio page: you pick a name, build the page and publish it at `linkmi.ar/yourname`. It's free and asks for no account or password. Publishing gives you a secret edit link, shown only once; the server keeps only its hash. If you already have a Linktree, it imports in one click. Mine is at [linkmi.ar/sofiferro](https://linkmi.ar/sofiferro).
+
+What sets it apart is the background: nine hand-written WebGL shaders, with no 3D libraries (micelio, aurora, liquid chrome, gradient, halftone, topography, dither, caustics and iridescent), with your choice of colors and speed. They react to the mouse and, on phones, to how the phone is tilted. There are four type pairings, four button styles and adjustable corners, and each page generates its own share image.
+
+It also works without a database. "link sin cuenta" stores the whole page inside the URL, and anyone who wants their own deploy can fork it, design the page in the editor and download its `linkmi.config.json`. It's built with Next.js 16 on Vercel, with Upstash Redis for published pages and Vercel Blob for avatars. The code is open source, under the MIT license.
+
+It was first called linkmicelio, after the first shader: a network that grows underground and connects things that are far apart, which is more or less what a link-in-bio page does.
